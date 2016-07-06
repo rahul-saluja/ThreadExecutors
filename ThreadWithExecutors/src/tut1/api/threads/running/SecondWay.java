@@ -2,20 +2,20 @@ package tut1.api.threads.running;
 
 import java.util.concurrent.TimeUnit;
 
-public class FirstWay {
+public class SecondWay {
 	
 	public static void main(String[] args) {
 		System.out.println("Main thread starts here...");
 		
-		new FirstTask();
-		Thread t = new FirstTask();
-		
+		new SecondTask().start();
+		Thread t = new SecondTask();
+		t.start();
 		System.out.println("Main thread ends here...");
 	}
 }
 
 
-class FirstTask extends Thread {
+class SecondTask extends Thread {
 	
 	private static int count = 0;
 	private int id;
@@ -34,8 +34,8 @@ class FirstTask extends Thread {
 		}
 	}
 	
-	public FirstTask() {
+	public SecondTask() {
 		this.id = ++count;
-		this.start();
+		
 	}
 }
