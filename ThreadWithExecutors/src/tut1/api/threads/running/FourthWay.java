@@ -33,6 +33,9 @@ public class FourthWay {
  * behavior in a better way.
  * Task Definition is entirely isolated to thread related code.
  * 
+ * Also Task can be used by executors as against only by threads, hence
+ * making the task reusable
+ * 
  * */
 class FourthTask implements Runnable {
 	
